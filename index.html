@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Installment Calculator</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href="/style.css" rel="stylesheet" >
+</head>
+<body>
+
+    <div id="main">
+        <div class="section">
+            <div class="row">
+                <div class="col" style="width: 50%">
+                    <label class="lh1" class="label" for="bankID">Bank:</label>
+                    <select class="universalInputBox" name="banks" id="bankID" onchange="updateBank(this)">
+                        <option selected disabled>Select Bank</option>
+                    </select> <br><br>
+                    
+                    <label class="lh1" for="amountID">Purchase Amount:</label>
+                    <input class="universalInputBox" type="number" min="0" placeholder="0" id="amountID" name="amount" oninput="updateOutput()"> <br><br>
+
+                    <label class="lh2" class="label" for="bankID"></label>
+                    <p id="footnoteID"></p>
+                </div>
+                <div class="col" style="width: auto">
+                    <label class="lh1" for="durationID">Duration:</label>
+                    <p class="lh2"></p>
+                    <!--
+                    <select name="duration" id="durationID">
+                        <option selected disabled>Select Duration</option>
+                    </select> <br>
+                    -->
+                    <div class="slider" id="sliderContainer">
+                        <input type="range" id="duration_slider" value="0" type="range" style="width: 100%" disabled oninput="updateOutput()">
+                        <span class="sMin" id="duration_min">3 mos.</span>
+                        <span class="sMax" id="duration_max">24 mos.</span>
+                    </div>
+                    <div class="contrastLT" style="margin-top: 4em">
+                        <label class="lh1" for="durationID">Installment:</label>
+                        <h1 id="monthlyID">&#8369;</h1>
+                        <p>per month for <span id="durationID" style="font-weight: bold;">__</span> months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    </div>
+    
+    <!--Scripts-->
+    <script src="/calculator.js" type="text/javascript"></script>
+</body>
+</html>
